@@ -217,7 +217,7 @@ After verifying everything worked, all 11 resources were destroyed with one comm
 ## Troubleshooting
 
 **`ERR_CONNECTION_REFUSED` when visiting the web page**
-The browser may be using `https://` automatically. Always type `http://` manually — we only opened port 80, not 443.
+The browser may be using `https://` automatically. I type `http://` manually — we only opened port 80, not 443.
 
 **IP address changes after every `terraform apply`**
 EC2 public IPs are dynamic and change when an instance is recreated. Add an `aws_eip` (Elastic IP) resource to assign a fixed IP that persists across recreations.
@@ -225,15 +225,12 @@ EC2 public IPs are dynamic and change when an instance is recreated. Add an `aws
 **user_data script doesn't run on recreated instances**
 cloud-init only runs user_data on the very first boot of a brand new instance. If Terraform destroys and recreates an instance, cloud-init may skip it. Connect via EC2 Instance Connect and install nginx manually if needed.
 
-**`terraform destroy` fails — instance still shows in console**
-Wait 2-3 minutes and refresh. EC2 termination takes time to complete in AWS.
-
 ---
 
 ## About the Author
 
 **Rukayat Alarape**
-Data Analyst | Cloud Engineer Learner | Program Officer, University of Ibadan
+Data Analyst | Cloud Engineer | DevOps 
 
 - GitHub: [@rukkylatunde2001](https://github.com/rukkylatunde2001)
 - Email: rukkylatunde2001@gmail.com
